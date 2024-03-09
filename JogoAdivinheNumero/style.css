@@ -7,15 +7,28 @@
 header{
     background-color: lightgray;
     padding: 20px;
-    text-align: left;
+    text-align:left;
 }
 
 header li {
     display: inline-block;
-    margin: 0 40px;
+    margin: 0 20px;
+    
 }
 
 header a{
     text-decoration: none;
     color: black;
+    
+    
+    
 }
+
+.demo-content{
+    padding: 15px;
+    font-size: 18px;
+    background: #164386;
+    
+    margin: 20px;
+}
+
