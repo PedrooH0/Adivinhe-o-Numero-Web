@@ -29,24 +29,26 @@
         </div>
     
 </header>
-    
-<h1>Adivinhe o Número</h1>
 
-    <p>Acabei de escolher um número entre 1 e 100. Veja se você consegue adivinhar ele em 10 tentativas ou menos. Eu irei dizer se a seu palpite foi muito alto ou muito baixo.</p>
+    <div class="teste">
+        <h1>Adivinhe o Número</h1>
 
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="number" min="1" max="100" required id="guessField" class="guessField">
-      <input type="submit" value="Submit guess" class="guessSubmit">
+            <p>Acabei de escolher um número entre 1 e 100. Veja se você consegue adivinhar ele em 10 tentativas ou menos. Eu irei dizer se a seu palpite foi muito alto ou muito baixo.</p>
+
+            <div class="form">
+            <label for="guessField">Escolha um número: </label>
+            <input type="number" min="1" max="100" required id="guessField" class="guessField">
+            <input type="submit" value="Confirmar" class="guessSubmit">
+            </div>
+
+            <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+            <input type="button" value="teste" class="gameOver" id="tt">
+            </div>
+
+            <script src="JS/script.js"></script>
     </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-    </div>
-
-    <script src="JS/script.js"></script>
-
 </body>
 </html>

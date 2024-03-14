@@ -4,33 +4,36 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
       const lowOrHi = document.querySelector('.lowOrHi');
       const guessSubmit = document.querySelector('.guessSubmit');
       const guessField = document.querySelector('.guessField');
+      const gameOverField = document.querySelector(".gameOver")
       let guessCount = 1;
-      let resetButton;
+      let resetButton = gameOverField;
+      document.getElementById('tt').style.display = 'none';
+      
 
       function checkGuess() {
         const userGuess = Number(guessField.value);
         if (guessCount === 1) {
-          guesses.textContent = 'Previous guesses: ';
+          guesses.textContent = 'Respostas anteriores: ';
         }
 
         guesses.textContent += userGuess + ' ';
 
         if (userGuess === randomNumber) {
-          lastResult.textContent = 'Congratulations! You got it right!';
+          lastResult.textContent = 'Parabéns você acertou';
           lastResult.style.backgroundColor = 'green';
           lowOrHi.textContent = '';
           setGameOver();
         } else if (guessCount === 10) {
-          lastResult.textContent = '!!!GAME OVER!!!';
+          lastResult.textContent = '!!!Fim de Jogo!!!';
           lowOrHi.textContent = '';
           setGameOver();
         } else {
-          lastResult.textContent = 'Wrong!';
+          lastResult.textContent = 'Errado!';
           lastResult.style.backgroundColor = 'red';
           if(userGuess < randomNumber) {
-            lowOrHi.textContent = 'Last guess was too low!' ;
+            lowOrHi.textContent = 'A tentativa anterior foi muito baixa!' ;
           } else if(userGuess > randomNumber) {
-            lowOrHi.textContent = 'Last guess was too high!';
+            lowOrHi.textContent = 'A tentativa anterior foi muito alta!';
           }
         }
 
@@ -44,9 +47,8 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
       function setGameOver() {
         guessField.disabled = true;
         guessSubmit.disabled = true;
-        resetButton = document.createElement('button');
-        resetButton.textContent = 'Start new game';
-        document.body.appendChild(resetButton);
+        document.getElementById('tt').style.display = 'inline';
+        resetButton.value = 'Começar novo jogo';
         resetButton.addEventListener('click', resetGame);
       }
 
@@ -57,7 +59,7 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
           resetPara.textContent = '';
         }
 
-        resetButton.parentNode.removeChild(resetButton);
+        document.getElementById('tt').style.display = 'none';
         guessField.disabled = false;
         guessSubmit.disabled = false;
         guessField.value = '';
